@@ -1,14 +1,20 @@
 package com.example.matrix;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.List;
 
 public class Inverse {
     @FXML
     private TextField id00, id01, id02, id10, id11, id12, id20, id21, id22;
+    @FXML Button idBack;
 
     Determinant determinant = new Determinant();
 
@@ -22,6 +28,13 @@ public class Inverse {
 
     public void onCreateClicked() {
         createMatrix();
+    }
+
+    public void onBackClicked() throws IOException {
+        FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("Matrix.fxml"));
+        Parent root = fxmlLoader1.load();
+        Stage stage1 = (Stage) idBack.getScene().getWindow();
+        stage1.setScene(new Scene(root));
     }
 
     public void createMatrix() {

@@ -4,7 +4,6 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.matrix.Rank">
    <children>
       <TextField fx:id="id00" layoutX="108.0" layoutY="79.0" prefHeight="50.0" prefWidth="50.0" />
@@ -19,5 +18,6 @@
       <Button fx:id="idCreate" layoutX="107.0" layoutY="327.0" mnemonicParsing="false" onAction="#onCreateClicked" text="CREATE" />
       <Button fx:id="idCalculate" layoutX="256.0" layoutY="327.0" mnemonicParsing="false" onAction="#onCalculateClicked" text="CALCULATE" visible="false" />
       <TextField fx:id="idRankValue" editable="false" layoutX="382.0" layoutY="327.0" prefHeight="25.0" prefWidth="57.0" />
+      <Button fx:id="idBack" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#onBackClicked" text="BACK" />
    </children>
 </AnchorPane>
