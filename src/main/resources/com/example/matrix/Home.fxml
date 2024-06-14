@@ -33,12 +33,12 @@
       </Button>
       <ImageView fitHeight="39.0" fitWidth="45.0" layoutX="14.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../iconsAndImages/iconaMatrice.png" />
+            <Image url="@iconsAndImages/iconaMatrice.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="25.0" fitWidth="26.0" layoutX="358.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../iconsAndImages/636047.png" />
+            <Image url="@iconsAndImages/636047.png" />
          </image>
       </ImageView>
    </children>
