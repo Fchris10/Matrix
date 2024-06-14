@@ -88,4 +88,5 @@
    <CheckBox fx:id="idUpperB" layoutX="602.0" layoutY="250.0" mnemonicParsing="false" onAction="#onUpperBClicked" prefHeight="26.0" prefWidth="61.0" text="Upper" />
    <Button fx:id="idCleanA" layoutX="265.0" layoutY="40.0" mnemonicParsing="false" onAction="#onCleanAClicked" text="CLEAN" />
    <Button fx:id="idCleanB" layoutX="534.0" layoutY="40.0" mnemonicParsing="false" onAction="#onCleanBClicked" text="CLEAN" />
+   <Button fx:id="idBack" layoutX="14.0" layoutY="561.0" mnemonicParsing="false" onAction="#onBackClicked" text="BACK" />
 </AnchorPane>

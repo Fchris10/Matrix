@@ -17,7 +17,7 @@ public class MatrixController {
     @FXML private TextField idB00, idB01, idB02, idB10, idB11, idB12, idB20, idB21, idB22;
     @FXML private TextField idR00, idR01, idR02, idR10, idR11, idR12, idR20, idR21, idR22;
     @FXML private TextField idValPowA,idValPowB, idValA, idValB;
-    @FXML private Button idDeterminant, idRank, idInverse;
+    @FXML private Button idDeterminant, idRank, idInverse, idBack;
 
     Boolean upperA = false;
     Boolean upperB = false;
@@ -171,6 +171,12 @@ public class MatrixController {
         FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("Inverse.fxml"));
         Parent root = fxmlLoader1.load();
         Stage stage1 = (Stage) idInverse.getScene().getWindow();
+        stage1.setScene(new Scene(root));
+    }
+    public void onBackClicked() throws IOException {
+        FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("Home.fxml"));
+        Parent root = fxmlLoader1.load();
+        Stage stage1 = (Stage) idBack.getScene().getWindow();
         stage1.setScene(new Scene(root));
     }
 }
