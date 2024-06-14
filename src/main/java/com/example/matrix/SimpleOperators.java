@@ -58,14 +58,42 @@ public class SimpleOperators {
         }
         return result;
     }
-    public double[][] triangular(int size, double[][] matrix) {
+    public double[][] triangular(int size, double[][] matrix, boolean upper) {
         double[][] result = new double[size][size];
 
+        // Copia della matrice originale nella matrice risultato
         for (int i = 0; i < size; i++) {
-            for (int j = 0; j <= i; j++) {
-                result[i][j] = matrix[i][j];
+            System.arraycopy(matrix[i], 0, result[i], 0, size);
+        }
+
+        if (upper) {
+            // Eliminazione di Gauss per ottenere la matrice triangolare superiore
+            for (int i = 0; i < size; i++) {
+                for (int j = i + 1; j < size; j++) {
+                    if (result[i][i] == 0) {
+                        throw new IllegalArgumentException("Matrice non invertibile, pivot nullo trovato");
+                    }
+                    double ratio = result[j][i] / result[i][i];
+                    for (int k = i; k < size; k++) {
+                        result[j][k] -= ratio * result[i][k];
+                    }
+                }
+            }
+        } else {
+            // Eliminazione di Gauss inversa per ottenere la matrice triangolare inferiore
+            for (int i = size - 1; i >= 0; i--) {
+                for (int j = i - 1; j >= 0; j--) {
+                    if (result[i][i] == 0) {
+                        throw new IllegalArgumentException("Matrice non invertibile, pivot nullo trovato");
+                    }
+                    double ratio = result[j][i] / result[i][i];
+                    for (int k = i; k >= 0; k--) {
+                        result[j][k] -= ratio * result[i][k];
+                    }
+                }
             }
         }
+
         return result;
     }
     public double[][] multiplicationNumber(int size, int n, double[][] matrix){
