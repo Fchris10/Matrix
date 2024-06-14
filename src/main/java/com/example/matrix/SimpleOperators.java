@@ -58,6 +58,16 @@ public class SimpleOperators {
         }
         return result;
     }
+    public double[][] triangular(int size, double[][] matrix) {
+        double[][] result = new double[size][size];
+
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j <= i; j++) {
+                result[i][j] = matrix[i][j];
+            }
+        }
+        return result;
+    }
     public double[][] multiplicationNumber(int size, int n, double[][] matrix){
         double[][] result = new double[size][size];
         for (int i = 0; i < size; i++) {

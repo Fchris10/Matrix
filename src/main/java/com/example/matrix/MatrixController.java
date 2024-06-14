@@ -101,6 +101,14 @@ public class MatrixController {
         double[][] resultMatrix = simpleOperators.transposed(size, matrixB);
         updateTextFieldsWithMatrixResult(resultMatrix, txfListB);
     }
+    public void onTriangularAClicked(){
+        double[][] resultMatrix = simpleOperators.triangular(size, matrixA);
+        updateTextFieldsWithMatrixResult(resultMatrix, txfListA);
+    }
+    public void onTriangularBClicked(){
+        double[][] resultMatrix = simpleOperators.triangular(size, matrixB);
+        updateTextFieldsWithMatrixResult(resultMatrix, txfListB);
+    }
     public void onMultiplicationANumClicked(){
         double[][] resultMatrix = simpleOperators.multiplicationNumber(size, numForA, matrixA);
         updateTextFieldsWithMatrixResult(resultMatrix, txfListA);
