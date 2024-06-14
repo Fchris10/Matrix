@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -19,6 +20,7 @@ public class MatrixController {
     @FXML private TextField idR00, idR01, idR02, idR10, idR11, idR12, idR20, idR21, idR22;
     @FXML private TextField idValPowA,idValPowB, idValA, idValB;
     @FXML private Button idDeterminant, idRank, idInverse;
+    @FXML private Label idLabelA, idLabelB;
 
     Boolean upperA = false;
     Boolean upperB = false;
@@ -107,14 +109,33 @@ public class MatrixController {
         double[][] resultMatrix = simpleOperators.transposed(size, matrixB);
         updateTextFieldsWithMatrixResult(resultMatrix, txfListB);
     }
-    public void onTriangularAClicked(){
+
+    public void onTriangularAClicked() {
+        try {
+            double[][] resultMatrix = simpleOperators.triangular(size, matrixA, upperA);
+            updateTextFieldsWithMatrixResult(resultMatrix, txfListA);
+        } catch (IllegalArgumentException e) {
+            idLabelA.setText(e.getMessage());
+        }
+    }
+
+    public void onTriangularBClicked() {
+        try {
+            double[][] resultMatrix = simpleOperators.triangular(size, matrixB, upperA);
+            updateTextFieldsWithMatrixResult(resultMatrix, txfListB);
+        } catch (IllegalArgumentException e) {
+            idLabelB.setText(e.getMessage());
+        }
+    }
+
+    /*public void onTriangularAClicked(){
         double[][] resultMatrix = simpleOperators.triangular(size, matrixA, upperA);
         updateTextFieldsWithMatrixResult(resultMatrix, txfListA);
     }
     public void onTriangularBClicked(){
         double[][] resultMatrix = simpleOperators.triangular(size, matrixB, upperB);
         updateTextFieldsWithMatrixResult(resultMatrix, txfListB);
-    }
+    }*/
     public void onMultiplicationANumClicked(){
         double[][] resultMatrix = simpleOperators.multiplicationNumber(size, numForA, matrixA);
         updateTextFieldsWithMatrixResult(resultMatrix, txfListA);
