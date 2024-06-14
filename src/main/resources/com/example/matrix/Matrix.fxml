@@ -67,15 +67,15 @@
    <Button fx:id="idMultiplicationANum" layoutX="171.0" layoutY="326.0" mnemonicParsing="false" onAction="#onMultiplicationANumClicked" prefHeight="25.0" prefWidth="115.0" text="Moltiplicare per" />
    <TextField fx:id="idValA" alignment="CENTER" layoutX="285.0" layoutY="326.0" prefHeight="25.0" prefWidth="35.0" text="2" />
    <Line endX="585.0" layoutX="115.0" layoutY="423.0" startX="-115.00000762939453" />
-   <TextField fx:id="idR00" editable="false" layoutX="193.0" layoutY="452.0" prefHeight="25.0" prefWidth="70.0" />
-   <TextField fx:id="idR01" editable="false" layoutX="287.0" layoutY="452.0" prefHeight="25.0" prefWidth="70.0" />
-   <TextField fx:id="idR02" editable="false" layoutX="385.0" layoutY="452.0" prefHeight="25.0" prefWidth="70.0" />
-   <TextField fx:id="idR10" editable="false" layoutX="192.0" layoutY="491.0" prefHeight="25.0" prefWidth="70.0" />
-   <TextField fx:id="idR11" editable="false" layoutX="286.0" layoutY="491.0" prefHeight="25.0" prefWidth="70.0" />
-   <TextField fx:id="idR12" editable="false" layoutX="384.0" layoutY="491.0" prefHeight="25.0" prefWidth="70.0" />
-   <TextField fx:id="idR20" editable="false" layoutX="189.0" layoutY="525.0" prefHeight="25.0" prefWidth="70.0" />
-   <TextField fx:id="idR21" editable="false" layoutX="283.0" layoutY="525.0" prefHeight="25.0" prefWidth="70.0" />
-   <TextField fx:id="idR22" editable="false" layoutX="381.0" layoutY="525.0" prefHeight="25.0" prefWidth="70.0" />
+   <TextField fx:id="idR00" editable="false" layoutX="255.0" layoutY="448.0" prefHeight="25.0" prefWidth="70.0" />
+   <TextField fx:id="idR01" editable="false" layoutX="349.0" layoutY="448.0" prefHeight="25.0" prefWidth="70.0" />
+   <TextField fx:id="idR02" editable="false" layoutX="447.0" layoutY="448.0" prefHeight="25.0" prefWidth="70.0" />
+   <TextField fx:id="idR10" editable="false" layoutX="255.0" layoutY="489.0" prefHeight="25.0" prefWidth="70.0" />
+   <TextField fx:id="idR11" editable="false" layoutX="349.0" layoutY="489.0" prefHeight="25.0" prefWidth="70.0" />
+   <TextField fx:id="idR12" editable="false" layoutX="447.0" layoutY="489.0" prefHeight="25.0" prefWidth="70.0" />
+   <TextField fx:id="idR20" editable="false" layoutX="255.0" layoutY="531.0" prefHeight="25.0" prefWidth="70.0" />
+   <TextField fx:id="idR21" editable="false" layoutX="349.0" layoutY="531.0" prefHeight="25.0" prefWidth="70.0" />
+   <TextField fx:id="idR22" editable="false" layoutX="447.0" layoutY="531.0" prefHeight="25.0" prefWidth="70.0" />
    <TextField fx:id="idValPowB" alignment="CENTER" editable="false" layoutX="555.0" layoutY="301.0" prefHeight="25.0" prefWidth="35.0" text="2" />
    <Button fx:id="idPowB" layoutX="441.0" layoutY="301.0" mnemonicParsing="false" onAction="#onPowBClicked" prefHeight="25.0" prefWidth="115.0" text="POW" />
    <Button fx:id="idTransposedB" layoutX="441.0" layoutY="276.0" mnemonicParsing="false" onAction="#onTransposedBClicked" prefHeight="25.0" prefWidth="150.0" text="TRASPOSTA" />
