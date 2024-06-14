@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -19,6 +20,8 @@ public class MatrixController {
     @FXML private TextField idValPowA,idValPowB, idValA, idValB;
     @FXML private Button idDeterminant, idRank, idInverse;
 
+    Boolean upperA = false;
+    Boolean upperB = false;
     SimpleOperators simpleOperators = new SimpleOperators();
 
     int size = 3, numOfPowA, numOfPowB, numForA, numForB;
@@ -72,6 +75,9 @@ public class MatrixController {
         createMatrixB();
     }
 
+    public void onUpperAClicked() { upperA = !upperA; }
+    public void onUpperBClicked() { upperB = !upperB; }
+
     public void onSumClicked(){
         double[][] resultMatrix = simpleOperators.sumAB(size, matrixA, matrixB);
         updateTextFieldsWithMatrixResult(resultMatrix, txfListRet);
@@ -102,11 +108,11 @@ public class MatrixController {
         updateTextFieldsWithMatrixResult(resultMatrix, txfListB);
     }
     public void onTriangularAClicked(){
-        double[][] resultMatrix = simpleOperators.triangular(size, matrixA);
+        double[][] resultMatrix = simpleOperators.triangular(size, matrixA, upperA);
         updateTextFieldsWithMatrixResult(resultMatrix, txfListA);
     }
     public void onTriangularBClicked(){
-        double[][] resultMatrix = simpleOperators.triangular(size, matrixB);
+        double[][] resultMatrix = simpleOperators.triangular(size, matrixB, upperB);
         updateTextFieldsWithMatrixResult(resultMatrix, txfListB);
     }
     public void onMultiplicationANumClicked(){
