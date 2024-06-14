@@ -87,6 +87,4 @@
    <Button fx:id="idTriangolareB" layoutX="441.0" layoutY="250.0" mnemonicParsing="false" onAction="#onTriangularBClicked" prefHeight="26.0" prefWidth="150.0" text="TRIANGOLARE" />
    <CheckBox fx:id="idUpperA" layoutX="334.0" layoutY="250.0" mnemonicParsing="false" onAction="#onUpperAClicked" prefHeight="26.0" prefWidth="61.0" text="Upper" />
    <CheckBox fx:id="idUpperB" layoutX="602.0" layoutY="250.0" mnemonicParsing="false" onAction="#onUpperBClicked" prefHeight="26.0" prefWidth="61.0" text="Upper" />
-   <Label fx:id="idLabelA" layoutX="171.0" layoutY="386.0" prefHeight="17.0" prefWidth="220.0" />
-   <Label fx:id="idLabelB" layoutX="441.0" layoutY="386.0" prefHeight="17.0" prefWidth="220.0" />
 </AnchorPane>

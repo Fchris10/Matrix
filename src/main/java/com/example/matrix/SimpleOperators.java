@@ -70,9 +70,6 @@ public class SimpleOperators {
             // Eliminazione di Gauss per ottenere la matrice triangolare superiore
             for (int i = 0; i < size; i++) {
                 for (int j = i + 1; j < size; j++) {
-                    if (result[i][i] == 0) {
-                        throw new IllegalArgumentException("impossibile ottenere triangolare");
-                    }
                     double ratio = result[j][i] / result[i][i];
                     for (int k = i; k < size; k++) {
                         result[j][k] -= ratio * result[i][k];
@@ -83,9 +80,9 @@ public class SimpleOperators {
             // Eliminazione di Gauss inversa per ottenere la matrice triangolare inferiore
             for (int i = size - 1; i >= 0; i--) {
                 for (int j = i - 1; j >= 0; j--) {
-                    if (result[i][i] == 0) {
+                    /*if (result[i][i] == 0) {
                         throw new IllegalArgumentException("impossibile ottenere triangolare");
-                    }
+                    }*/
                     double ratio = result[j][i] / result[i][i];
                     for (int k = i; k >= 0; k--) {
                         result[j][k] -= ratio * result[i][k];
