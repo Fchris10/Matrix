@@ -6,8 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -39,6 +37,24 @@ public class MatrixController {
         txfListA = List.of(idA00, idA01, idA02, idA10, idA11, idA12, idA20, idA21, idA22);
         txfListB = List.of(idB00, idB01, idB02, idB10, idB11, idB12, idB20, idB21, idB22);
         txfListRet = List.of(idR00, idR01, idR02, idR10, idR11, idR12, idR20, idR21, idR22);
+    }
+
+    public void onCleanAClicked() {
+        for (int row = 0; row < size; row++) {
+            for (int col = 0; col < size; col++) {
+                matrixA[row][col] = 0;
+            }
+        }
+        updateTextFieldsWithMatrixResult(matrixA, txfListA);
+    }
+
+    public void onCleanBClicked() {
+        for (int row = 0; row < size; row++) {
+            for (int col = 0; col < size; col++) {
+                matrixB[row][col] = 0;
+            }
+        }
+        updateTextFieldsWithMatrixResult(matrixB, txfListB);
     }
 
     public void createMatrix() {
