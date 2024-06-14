@@ -4,7 +4,6 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.matrix.Inverse">
    <children>
       <TextField fx:id="id00" layoutX="107.0" layoutY="115.0" prefHeight="25.0" prefWidth="60.0" />
@@ -18,5 +17,6 @@
       <TextField fx:id="id22" layoutX="261.0" layoutY="200.0" prefHeight="25.0" prefWidth="60.0" />
       <Button fx:id="idCreate" layoutX="81.0" layoutY="300.0" mnemonicParsing="false" onAction="#onCreateClicked" text="CREATE" />
       <Button fx:id="idInverse" layoutX="167.0" layoutY="300.0" mnemonicParsing="false" onAction="#onInverseClicked" text="INVERSE" />
+      <Button fx:id="idBack" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#onBackClicked" text="BACK" />
    </children>
 </AnchorPane>

@@ -13,26 +13,28 @@ import java.io.IOException;
 import java.util.List;
 
 public class MatrixController {
-    @FXML private TextField id00, id01, id02, id10, id11, id12, id20, id21, id22;
+    @FXML private TextField idA00, idA01, idA02, idA10, idA11, idA12, idA20, idA21, idA22;
+    @FXML private TextField idB00, idB01, idB02, idB10, idB11, idB12, idB20, idB21, idB22;
     @FXML private TextField idR00, idR01, idR02, idR10, idR11, idR12, idR20, idR21, idR22;
-    @FXML private TextField idValuePow;
-    @FXML private Button idMin, idDeterminant, idRank, idInverse;
+    @FXML private TextField idValPowA,idValPowB, idValA, idValB;
+    @FXML private Button idDeterminant, idRank, idInverse;
 
     SimpleOperators simpleOperators = new SimpleOperators();
 
-    int size = 3, numOfPow;
-    double[][] matrix = new double[size][size];
-    List<TextField> txfList, txfEquals;
-
-    double[][] matrixTmp = {{1,2,3},
-                            {4,5,6},
-                            {7,0,9}}  ;
+    int size = 3, numOfPowA, numOfPowB, numForA, numForB;
+    double[][] matrixA = new double[size][size];
+    double[][] matrixB = new double[size][size];
+    List<TextField> txfListA, txfListB, txfListRet;
 
     @FXML
     public void initialize() {
-        numOfPow = Integer.parseInt(idValuePow.getText());
-        txfList = List.of(id00, id01, id02, id10, id11, id12, id20, id21, id22);
-        txfEquals = List.of(idR00, idR01, idR02, idR10, idR11, idR12, idR20, idR21, idR22);
+        numOfPowA = Integer.parseInt(idValPowA.getText());
+        numOfPowB = Integer.parseInt(idValPowB.getText());
+        numForA = Integer.parseInt(idValA.getText());
+        numForB = Integer.parseInt(idValB.getText());
+        txfListA = List.of(idA00, idA01, idA02, idA10, idA11, idA12, idA20, idA21, idA22);
+        txfListB = List.of(idB00, idB01, idB02, idB10, idB11, idB12, idB20, idB21, idB22);
+        txfListRet = List.of(idR00, idR01, idR02, idR10, idR11, idR12, idR20, idR21, idR22);
     }
 
     public void createMatrix() {
@@ -40,8 +42,8 @@ public class MatrixController {
         for (int row = 0; row < size; row++) {
             for (int col = 0; col < size; col++) {
                 try {
-                    String text = txfList.get(i).getText();
-                    matrix[row][col] = Double.parseDouble(text);
+                    String text = txfListA.get(i).getText();
+                    matrixA[row][col] = Double.parseDouble(text);
                 } catch (NumberFormatException e) {
                     System.out.print("error");
                 }
@@ -49,42 +51,63 @@ public class MatrixController {
             }
         }
     }
-    public void onCreateClicked() {
-        createMatrix();
-    }
-    public void onSumClicked(){
-        double[][] resultMatrix = simpleOperators.sumAB(size, matrix, matrixTmp);
-        updateTextFieldsWithMatrixResult(resultMatrix, txfEquals);
-    }
-    public void onMinusClicked(){
-        double[][] resultMatrix = simpleOperators.minusAB(size, matrix, matrixTmp);
-        updateTextFieldsWithMatrixResult(resultMatrix, txfEquals);
-    }
-    public void onMultiplicationClicked(){
-        double[][] resultMatrix = simpleOperators.multiplicationAB(size, matrix, matrixTmp);
-        updateTextFieldsWithMatrixResult(resultMatrix, txfEquals);
-    }
-
-    public void onPlusClicked(){
-        numOfPow++;
-        idValuePow.setText(String.valueOf(numOfPow));
-        idMin.setDisable(false);
-    }
-    public void onMinClicked(){
-        if(numOfPow == 2){
-            idMin.setDisable(true);
-        } else {
-            numOfPow--;
-            idValuePow.setText(String.valueOf(numOfPow));
+    public void createMatrixB() {
+        int i = 0;
+        for (int row = 0; row < size; row++) {
+            for (int col = 0; col < size; col++) {
+                try {
+                    String text = txfListB.get(i).getText();
+                    matrixB[row][col] = Double.parseDouble(text);
+                } catch (NumberFormatException e) {
+                    System.out.print("error");
+                }
+                i++;
+            }
         }
     }
-    public void onPowClicked(){
-        double[][] resultMatrix = simpleOperators.powA(size, matrix, numOfPow);
-        updateTextFieldsWithMatrixResult(resultMatrix, txfEquals);
+    public void onCreateAClicked() {
+        createMatrix();
     }
-    public void onTransposedClicked(){
-        double[][] resultMatrix = simpleOperators.transposed(size, matrix);
-        updateTextFieldsWithMatrixResult(resultMatrix, txfList);
+    public void onCreateBClicked() {
+        createMatrixB();
+    }
+
+    public void onSumClicked(){
+        double[][] resultMatrix = simpleOperators.sumAB(size, matrixA, matrixB);
+        updateTextFieldsWithMatrixResult(resultMatrix, txfListRet);
+    }
+    public void onMinusClicked(){
+        double[][] resultMatrix = simpleOperators.minusAB(size, matrixA, matrixB);
+        updateTextFieldsWithMatrixResult(resultMatrix, txfListRet);
+    }
+    public void onMultiplicationClicked(){
+        double[][] resultMatrix = simpleOperators.multiplicationAB(size, matrixA, matrixB);
+        updateTextFieldsWithMatrixResult(resultMatrix, txfListRet);
+    }
+
+    public void onPowAClicked(){
+        double[][] resultMatrix = simpleOperators.powA(size, matrixA, numOfPowA);
+        updateTextFieldsWithMatrixResult(resultMatrix, txfListA);
+    }
+    public void onPowBClicked(){
+        double[][] resultMatrix = simpleOperators.powA(size, matrixB, numOfPowB);
+        updateTextFieldsWithMatrixResult(resultMatrix, txfListB);
+    }
+    public void onTransposedAClicked(){
+        double[][] resultMatrix = simpleOperators.transposed(size, matrixA);
+        updateTextFieldsWithMatrixResult(resultMatrix, txfListA);
+    }
+    public void onTransposedBClicked(){
+        double[][] resultMatrix = simpleOperators.transposed(size, matrixB);
+        updateTextFieldsWithMatrixResult(resultMatrix, txfListB);
+    }
+    public void onMultiplicationANumClicked(){
+        double[][] resultMatrix = simpleOperators.multiplicationNumber(size, numForA, matrixA);
+        updateTextFieldsWithMatrixResult(resultMatrix, txfListA);
+    }
+    public void onMultiplicationBNumClicked(){
+        double[][] resultMatrix = simpleOperators.multiplicationNumber(size, numForB, matrixB);
+        updateTextFieldsWithMatrixResult(resultMatrix, txfListB);
     }
     private void updateTextFieldsWithMatrixResult(double[][] matrixResult, List<TextField> txfEquals) {
         int i = 0;

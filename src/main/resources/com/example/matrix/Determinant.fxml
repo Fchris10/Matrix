@@ -35,5 +35,6 @@
       <Button fx:id="idCalculate" layoutX="261.0" layoutY="299.0" mnemonicParsing="false" onAction="#onCalculateClicked" text="CALCULATE" visible="false" />
       <Button fx:id="idCreate" layoutX="86.0" layoutY="152.0" mnemonicParsing="false" onAction="#onCreateClicked" text="CREATE" />
       <TextField fx:id="idDeterminantValue" layoutX="424.0" layoutY="152.0" prefHeight="25.0" prefWidth="100.0" />
+      <Button fx:id="idBack" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#onBackClicked" text="BACK" />
    </children>
 </AnchorPane>
