@@ -1,7 +1,5 @@
 package com.example.matrix;
 
-import javafx.fxml.FXML;
-
 public class SimpleOperators {
 
     public double[][] sumAB(int size,  double[][] matrixA, double[][] matrixB) {

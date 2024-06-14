@@ -4,12 +4,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 public class Determinant {
     @FXML private TextField id00, id01, id02, id10, id11, id12, id20, id21, id22, idDeterminantValue;
@@ -32,13 +35,6 @@ public class Determinant {
         idDeterminantValue.setText(String.valueOf(determinant));
     }
 
-    public void onBackClicked() throws IOException {
-        FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("Matrix.fxml"));
-        Parent root = fxmlLoader1.load();
-        Stage stage1 = (Stage) idBack.getScene().getWindow();
-        stage1.setScene(new Scene(root));
-    }
-
     public void createMatrix() {
         int i = 0;
         for (int row = 0; row < size; row++) {
@@ -47,6 +43,7 @@ public class Determinant {
                     String text = txfList.get(i).getText();
                     matrix[row][col] = Double.parseDouble(text);
                 } catch (NumberFormatException e) {
+                    //errorMatrix();
                     System.out.print("error");
                 }
                 i++;
@@ -54,7 +51,12 @@ public class Determinant {
         }
         idCalculate.setVisible(true);
     }
-
+    public void errorMatrix(){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Alert Matrix");
+        alert.setContentText("The matrix has alphabet characters or empty values");
+        Optional<ButtonType> result = alert.showAndWait();
+    }
     public double calculateDeterminant(double[][] matrix) {
         int n = matrix.length;
         if (n == 1) {
@@ -88,5 +90,11 @@ public class Determinant {
             }
         }
         return subMatrix;
+    }
+    public void onBackClicked() throws IOException {
+        FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("Matrix.fxml"));
+        Parent root = fxmlLoader1.load();
+        Stage stage1 = (Stage) idBack.getScene().getWindow();
+        stage1.setScene(new Scene(root));
     }
 }

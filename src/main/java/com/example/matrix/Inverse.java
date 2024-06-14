@@ -4,17 +4,18 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 public class Inverse {
-    @FXML
-    private TextField id00, id01, id02, id10, id11, id12, id20, id21, id22;
-    @FXML Button idBack;
+    @FXML private TextField id00, id01, id02, id10, id11, id12, id20, id21, id22;
+    @FXML private Button idBack;
 
     Determinant determinant = new Determinant();
 
@@ -28,13 +29,6 @@ public class Inverse {
 
     public void onCreateClicked() {
         createMatrix();
-    }
-
-    public void onBackClicked() throws IOException {
-        FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("Matrix.fxml"));
-        Parent root = fxmlLoader1.load();
-        Stage stage1 = (Stage) idBack.getScene().getWindow();
-        stage1.setScene(new Scene(root));
     }
 
     public void createMatrix() {
@@ -79,8 +73,11 @@ public class Inverse {
     }
     public void  inverseMatrix() {
         double det = determinant.calculateDeterminant(matrix);
-        if (det == 0) {
-            throw new IllegalArgumentException("La matrice non è invertibile (determinante = 0).");
+        if(det == 0){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Alert Result");
+            alert.setContentText("The determinant is equal to 0, the inverse of matrix doesn't exist!");
+            Optional<ButtonType> result = alert.showAndWait();
         }
         double[][] cof = cofactors();
         double[][] transposed = transposed(cof);
@@ -105,5 +102,11 @@ public class Inverse {
                 i++;
             }
         }
+    }
+    public void onBackClicked() throws IOException {
+        FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("Matrix.fxml"));
+        Parent root = fxmlLoader1.load();
+        Stage stage1 = (Stage) idBack.getScene().getWindow();
+        stage1.setScene(new Scene(root));
     }
 }
