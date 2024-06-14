@@ -1,5 +1,7 @@
 package com.example.matrix;
 
+import javafx.fxml.FXML;
+
 public class SimpleOperators {
 
     public double[][] sumAB(int size,  double[][] matrixA, double[][] matrixB) {
@@ -71,7 +73,7 @@ public class SimpleOperators {
             for (int i = 0; i < size; i++) {
                 for (int j = i + 1; j < size; j++) {
                     if (result[i][i] == 0) {
-                        throw new IllegalArgumentException("Matrice non invertibile, pivot nullo trovato");
+                        throw new IllegalArgumentException("impossibile ottenere triangolare");
                     }
                     double ratio = result[j][i] / result[i][i];
                     for (int k = i; k < size; k++) {
@@ -84,7 +86,7 @@ public class SimpleOperators {
             for (int i = size - 1; i >= 0; i--) {
                 for (int j = i - 1; j >= 0; j--) {
                     if (result[i][i] == 0) {
-                        throw new IllegalArgumentException("Matrice non invertibile, pivot nullo trovato");
+                        throw new IllegalArgumentException("impossibile ottenere triangolare");
                     }
                     double ratio = result[j][i] / result[i][i];
                     for (int k = i; k >= 0; k--) {
