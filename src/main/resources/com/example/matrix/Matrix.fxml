@@ -22,15 +22,15 @@
             <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
         </rowConstraints>
-        <TextField fx:id="idA00" prefHeight="25.0" prefWidth="70.0" text="0" />
-        <TextField fx:id="idA01" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.columnIndex="1" />
-        <TextField fx:id="idA02" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.columnIndex="2" />
-        <TextField fx:id="idA10" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.rowIndex="1" />
-        <TextField fx:id="idA11" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-        <TextField fx:id="idA12" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-        <TextField fx:id="idA20" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.rowIndex="2" />
-        <TextField fx:id="idA21" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-        <TextField fx:id="idA22" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+        <TextField fx:id="idA00" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" />
+        <TextField fx:id="idA01" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.columnIndex="1" />
+        <TextField fx:id="idA02" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.columnIndex="2" />
+        <TextField fx:id="idA10" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.rowIndex="1" />
+        <TextField fx:id="idA11" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <TextField fx:id="idA12" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <TextField fx:id="idA20" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.rowIndex="2" />
+        <TextField fx:id="idA21" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <TextField fx:id="idA22" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
     </GridPane>
     <Button fx:id="idCreateA" layoutX="220.0" layoutY="44.0" mnemonicParsing="false" onAction="#onCreateAClicked" text="CREATE" />
    <Button fx:id="idSum" layoutX="362.0" layoutY="116.0" mnemonicParsing="false" onAction="#onSumClicked" text="A + B" />
@@ -46,15 +46,15 @@
          <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
       </rowConstraints>
       <children>
-         <TextField fx:id="idB00" prefHeight="25.0" prefWidth="70.0" />
-         <TextField fx:id="idB01" prefHeight="25.0" prefWidth="70.0" GridPane.columnIndex="1" />
-         <TextField fx:id="idB02" prefHeight="25.0" prefWidth="70.0" GridPane.columnIndex="2" />
-         <TextField fx:id="idB10" prefHeight="25.0" prefWidth="70.0" GridPane.rowIndex="1" />
-         <TextField fx:id="idB11" prefHeight="25.0" prefWidth="70.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-         <TextField fx:id="idB12" prefHeight="25.0" prefWidth="70.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-         <TextField fx:id="idB20" prefHeight="25.0" prefWidth="70.0" GridPane.rowIndex="2" />
-         <TextField fx:id="idB21" prefHeight="25.0" prefWidth="70.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-         <TextField fx:id="idB22" prefHeight="25.0" prefWidth="70.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+         <TextField fx:id="idB00" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" />
+         <TextField fx:id="idB01" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.columnIndex="1" />
+         <TextField fx:id="idB02" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.columnIndex="2" />
+         <TextField fx:id="idB10" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.rowIndex="1" />
+         <TextField fx:id="idB11" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         <TextField fx:id="idB12" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+         <TextField fx:id="idB20" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.rowIndex="2" />
+         <TextField fx:id="idB21" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         <TextField fx:id="idB22" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
       </children>
    </GridPane>
    <Button fx:id="idMinus" layoutX="364.0" layoutY="151.0" mnemonicParsing="false" onAction="#onMinusClicked" text="A - B" />
