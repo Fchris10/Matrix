@@ -6,8 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -19,8 +17,7 @@ public class MatrixController {
     @FXML private TextField idB00, idB01, idB02, idB10, idB11, idB12, idB20, idB21, idB22;
     @FXML private TextField idR00, idR01, idR02, idR10, idR11, idR12, idR20, idR21, idR22;
     @FXML private TextField idValPowA,idValPowB, idValA, idValB;
-    @FXML private Button idDeterminant, idRank, idInverse;
-    @FXML private Label idLabelA, idLabelB;
+    @FXML private Button idDeterminant, idRank, idInverse, idBack;
 
     Boolean upperA = false;
     Boolean upperB = false;
@@ -40,6 +37,24 @@ public class MatrixController {
         txfListA = List.of(idA00, idA01, idA02, idA10, idA11, idA12, idA20, idA21, idA22);
         txfListB = List.of(idB00, idB01, idB02, idB10, idB11, idB12, idB20, idB21, idB22);
         txfListRet = List.of(idR00, idR01, idR02, idR10, idR11, idR12, idR20, idR21, idR22);
+    }
+
+    public void onCleanAClicked() {
+        for (int row = 0; row < size; row++) {
+            for (int col = 0; col < size; col++) {
+                matrixA[row][col] = 0;
+            }
+        }
+        updateTextFieldsWithMatrixResult(matrixA, txfListA);
+    }
+
+    public void onCleanBClicked() {
+        for (int row = 0; row < size; row++) {
+            for (int col = 0; col < size; col++) {
+                matrixB[row][col] = 0;
+            }
+        }
+        updateTextFieldsWithMatrixResult(matrixB, txfListB);
     }
 
     public void createMatrix() {
@@ -110,32 +125,14 @@ public class MatrixController {
         updateTextFieldsWithMatrixResult(resultMatrix, txfListB);
     }
 
-    public void onTriangularAClicked() {
-        try {
-            double[][] resultMatrix = simpleOperators.triangular(size, matrixA, upperA);
-            updateTextFieldsWithMatrixResult(resultMatrix, txfListA);
-        } catch (IllegalArgumentException e) {
-            idLabelA.setText(e.getMessage());
-        }
-    }
-
-    public void onTriangularBClicked() {
-        try {
-            double[][] resultMatrix = simpleOperators.triangular(size, matrixB, upperA);
-            updateTextFieldsWithMatrixResult(resultMatrix, txfListB);
-        } catch (IllegalArgumentException e) {
-            idLabelB.setText(e.getMessage());
-        }
-    }
-
-    /*public void onTriangularAClicked(){
+    public void onTriangularAClicked(){
         double[][] resultMatrix = simpleOperators.triangular(size, matrixA, upperA);
         updateTextFieldsWithMatrixResult(resultMatrix, txfListA);
     }
     public void onTriangularBClicked(){
         double[][] resultMatrix = simpleOperators.triangular(size, matrixB, upperB);
         updateTextFieldsWithMatrixResult(resultMatrix, txfListB);
-    }*/
+    }
     public void onMultiplicationANumClicked(){
         double[][] resultMatrix = simpleOperators.multiplicationNumber(size, numForA, matrixA);
         updateTextFieldsWithMatrixResult(resultMatrix, txfListA);
@@ -174,6 +171,12 @@ public class MatrixController {
         FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("Inverse.fxml"));
         Parent root = fxmlLoader1.load();
         Stage stage1 = (Stage) idInverse.getScene().getWindow();
+        stage1.setScene(new Scene(root));
+    }
+    public void onBackClicked() throws IOException {
+        FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("Home.fxml"));
+        Parent root = fxmlLoader1.load();
+        Stage stage1 = (Stage) idBack.getScene().getWindow();
         stage1.setScene(new Scene(root));
     }
 }
