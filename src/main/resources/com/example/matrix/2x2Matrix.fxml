@@ -1,11 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.matrix.Matrix2x2Controller">
-   <children>
-      <Button fx:id="idBack" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#onBackClicked" text="BACK" />
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.matrix.Matrix2x2Controller">
+   <GridPane gridLinesVisible="true" layoutX="172.0" layoutY="91.0" prefHeight="100.0" prefWidth="100.0">
+      <columnConstraints>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" prefWidth="50.0" />
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" prefWidth="50.0" />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+      <TextField fx:id="idA00" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" />
+      <TextField fx:id="idA01" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.columnIndex="1" />
+      <TextField fx:id="idA10" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.rowIndex="1" />
+      <TextField fx:id="idA11" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+   </GridPane>
+   <Button fx:id="idCreateA" layoutX="220.0" layoutY="44.0" mnemonicParsing="false" onAction="#onCreateAClicked" text="CREATE" />
+   <Button fx:id="idSum" layoutX="362.0" layoutY="116.0" mnemonicParsing="false" onAction="#onSumClicked" text="A + B" />
+   <GridPane gridLinesVisible="true" layoutX="442.0" layoutY="91.0" prefHeight="100.0" prefWidth="100.0">
+      <columnConstraints>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" prefWidth="50.0" />
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" prefWidth="50.0" />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+      <children>
+         <TextField fx:id="idB00" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" />
+         <TextField fx:id="idB01" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.columnIndex="1" />
+         <TextField fx:id="idB10" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.rowIndex="1" />
+         <TextField fx:id="idB11" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      </children>
+   </GridPane>
+   <Button fx:id="idMinus" layoutX="364.0" layoutY="151.0" mnemonicParsing="false" onAction="#onMinusClicked" text="A - B" />
+   <Button fx:id="idMultiplication" layoutX="363.0" layoutY="189.0" mnemonicParsing="false" onAction="#onMultiplicationClicked" text="A x B" />
+   <TextField fx:id="idValPowA" alignment="CENTER" editable="false" layoutX="285.0" layoutY="301.0" prefHeight="25.0" prefWidth="35.0" text="2" />
+   <Button fx:id="idPowA" layoutX="171.0" layoutY="301.0" mnemonicParsing="false" onAction="#onPowAClicked" prefHeight="25.0" prefWidth="115.0" text="POW" />
+   <Button fx:id="idDeterminant" layoutX="20.0" layoutY="116.0" mnemonicParsing="false" onAction="#onDeterminantClicked" style="-fx-background-color: null;" text="DETERMINANTE" />
+   <Button fx:id="idInverse" layoutX="17.0" layoutY="163.0" mnemonicParsing="false" onAction="#onInverseClicked" style="-fx-background-color: null;" text="INVERSA" />
+   <Button fx:id="idTransposedA" layoutX="171.0" layoutY="276.0" mnemonicParsing="false" onAction="#onTransposedAClicked" prefHeight="25.0" prefWidth="150.0" text="TRASPOSTA" />
+   <Button fx:id="idRank" layoutX="20.0" layoutY="138.0" mnemonicParsing="false" onAction="#onRankClicked" style="-fx-background-color: null;" text="RANGO" />
+   <Button fx:id="idCreateB" layoutX="490.0" layoutY="44.0" mnemonicParsing="false" onAction="#onCreateBClicked" text="CREATE" />
+   <Button fx:id="idMultiplicationANum" layoutX="171.0" layoutY="326.0" mnemonicParsing="false" onAction="#onMultiplicationANumClicked" prefHeight="25.0" prefWidth="115.0" text="Moltiplicare per" />
+   <TextField fx:id="idValA" alignment="CENTER" layoutX="285.0" layoutY="326.0" prefHeight="25.0" prefWidth="35.0" text="2" />
+   <Line endX="585.0" layoutX="115.0" layoutY="423.0" startX="-115.00000762939453" />
+   <TextField fx:id="idR00" editable="false" layoutX="255.0" layoutY="448.0" prefHeight="25.0" prefWidth="70.0" />
+   <TextField fx:id="idR01" editable="false" layoutX="349.0" layoutY="448.0" prefHeight="25.0" prefWidth="70.0" />
+   <TextField fx:id="idR10" editable="false" layoutX="255.0" layoutY="489.0" prefHeight="25.0" prefWidth="70.0" />
+   <TextField fx:id="idR11" editable="false" layoutX="349.0" layoutY="489.0" prefHeight="25.0" prefWidth="70.0" />
+   <TextField fx:id="idValPowB" alignment="CENTER" editable="false" layoutX="555.0" layoutY="301.0" prefHeight="25.0" prefWidth="35.0" text="2" />
+   <Button fx:id="idPowB" layoutX="441.0" layoutY="301.0" mnemonicParsing="false" onAction="#onPowBClicked" prefHeight="25.0" prefWidth="115.0" text="POW" />
+   <Button fx:id="idTransposedB" layoutX="441.0" layoutY="276.0" mnemonicParsing="false" onAction="#onTransposedBClicked" prefHeight="25.0" prefWidth="150.0" text="TRASPOSTA" />
+   <Button fx:id="idMultiplicationBNum" layoutX="441.0" layoutY="326.0" mnemonicParsing="false" onAction="#onMultiplicationBNumClicked" prefHeight="25.0" prefWidth="115.0" text="Moltiplicare per" />
+   <TextField fx:id="idValB" alignment="CENTER" layoutX="555.0" layoutY="326.0" prefHeight="25.0" prefWidth="35.0" text="2" />
+   <Button fx:id="idTriangularA" layoutX="171.0" layoutY="250.0" mnemonicParsing="false" onAction="#onTriangularAClicked" prefHeight="26.0" prefWidth="150.0" text="TRIANGOLARE" />
+   <Button fx:id="idTriangularB" layoutX="441.0" layoutY="250.0" mnemonicParsing="false" onAction="#onTriangularBClicked" prefHeight="26.0" prefWidth="150.0" text="TRIANGOLARE" />
+   <CheckBox fx:id="idUpperA" layoutX="334.0" layoutY="250.0" mnemonicParsing="false" onAction="#onUpperAClicked" prefHeight="26.0" prefWidth="61.0" text="Upper" />
+   <CheckBox fx:id="idUpperB" layoutX="602.0" layoutY="250.0" mnemonicParsing="false" onAction="#onUpperBClicked" prefHeight="26.0" prefWidth="61.0" text="Upper" />
+   <Button fx:id="idBack" layoutX="14.0" layoutY="561.0" mnemonicParsing="false" onAction="#onBackClicked" text="BACK" />
+   <Label fx:id="idLabel" layoutX="80.0" layoutY="493.0" />
+   <Button fx:id="idClean" layoutX="362.0" layoutY="360.0" mnemonicParsing="false" onAction="#onCleanClicked" prefHeight="44.0" prefWidth="44.0" />
+   <ImageView fitHeight="44.0" fitWidth="57.0" layoutX="362.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@iconsAndImages/img.icons8.png" />
+      </image>
+   </ImageView>
 </AnchorPane>

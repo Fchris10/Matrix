@@ -52,6 +52,8 @@ public class MatrixController {
             }
         }
         updateTextFieldsWithMatrixResult(matrixRet, txfListRet);
+        updateTextFieldsWithMatrixResult(matrixRet, txfListA);
+        updateTextFieldsWithMatrixResult(matrixRet, txfListB);
     }
 
     public void createMatrix() {
