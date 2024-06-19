@@ -4,6 +4,8 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -89,5 +91,10 @@
    <CheckBox fx:id="idUpperB" layoutX="602.0" layoutY="250.0" mnemonicParsing="false" onAction="#onUpperBClicked" prefHeight="26.0" prefWidth="61.0" text="Upper" />
    <Button fx:id="idBack" layoutX="14.0" layoutY="561.0" mnemonicParsing="false" onAction="#onBackClicked" text="BACK" />
    <Label fx:id="idLabel" layoutX="80.0" layoutY="493.0" />
-   <Button fx:id="idClean" layoutX="557.0" layoutY="489.0" mnemonicParsing="false" onAction="#onCleanClicked" text="CLEAN" />
+   <Button fx:id="idClean" layoutX="363.0" layoutY="351.0" mnemonicParsing="false" onAction="#onCleanClicked" prefHeight="44.0" prefWidth="44.0" />
+   <ImageView fitHeight="44.0" fitWidth="57.0" layoutX="363.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@iconsAndImages/img.icons8.png" />
+      </image>
+   </ImageView>
 </AnchorPane>
