@@ -81,10 +81,7 @@
    <Button fx:id="idMultiplication" layoutX="363.0" layoutY="189.0" mnemonicParsing="false" onAction="#onMultiplicationClicked" text="A x B" />
    <TextField fx:id="idValPowA" alignment="CENTER" editable="false" layoutX="285.0" layoutY="301.0" prefHeight="25.0" prefWidth="35.0" text="2" />
    <Button fx:id="idPowA" layoutX="171.0" layoutY="301.0" mnemonicParsing="false" onAction="#onPowAClicked" prefHeight="25.0" prefWidth="115.0" text="POW" />
-   <Button fx:id="idDeterminant" layoutX="20.0" layoutY="116.0" mnemonicParsing="false" onAction="#onDeterminantClicked" style="-fx-background-color: null;" text="DETERMINANTE" />
-   <Button fx:id="idInverse" layoutX="17.0" layoutY="163.0" mnemonicParsing="false" onAction="#onInverseClicked" style="-fx-background-color: null;" text="INVERSA" />
    <Button fx:id="idTransposedA" layoutX="171.0" layoutY="276.0" mnemonicParsing="false" onAction="#onTransposedAClicked" prefHeight="25.0" prefWidth="150.0" text="TRASPOSTA" />
-   <Button fx:id="idRank" layoutX="20.0" layoutY="138.0" mnemonicParsing="false" onAction="#onRankClicked" style="-fx-background-color: null;" text="RANGO" />
    <Button fx:id="idCreateB" layoutX="367.0" layoutY="45.0" mnemonicParsing="false" onAction="#onCreateBClicked" text="CREATE" />
    <Button fx:id="idMultiplicationANum" layoutX="171.0" layoutY="326.0" mnemonicParsing="false" onAction="#onMultiplicationANumClicked" prefHeight="25.0" prefWidth="115.0" text="Moltiplicare per" />
    <TextField fx:id="idValA" alignment="CENTER" layoutX="285.0" layoutY="326.0" prefHeight="25.0" prefWidth="35.0" text="2" />
@@ -109,7 +106,6 @@
    <CheckBox fx:id="idUpperB" layoutX="602.0" layoutY="250.0" mnemonicParsing="false" onAction="#onUpperBClicked" prefHeight="26.0" prefWidth="61.0" text="Upper" />
    <Button fx:id="idBack" layoutX="14.0" layoutY="561.0" mnemonicParsing="false" onAction="#onBackClicked" text="BACK" />
    <Label fx:id="idLabel" layoutX="80.0" layoutY="493.0" />
-   <Button fx:id="idClean" layoutX="363.0" layoutY="352.0" mnemonicParsing="false" onAction="#onCleanClicked" prefHeight="44.0" prefWidth="41.0" />
    <TextField fx:id="idR30" editable="false" layoutX="254.0" layoutY="567.0" prefHeight="25.0" prefWidth="70.0" />
    <TextField fx:id="idR31" editable="false" layoutX="348.0" layoutY="567.0" prefHeight="25.0" prefWidth="70.0" />
    <TextField fx:id="idR32" editable="false" layoutX="446.0" layoutY="567.0" prefHeight="25.0" prefWidth="70.0" />
@@ -117,7 +113,7 @@
    <TextField fx:id="idR13" editable="false" layoutX="538.0" layoutY="489.0" prefHeight="25.0" prefWidth="70.0" />
    <TextField fx:id="idR23" editable="false" layoutX="538.0" layoutY="531.0" prefHeight="25.0" prefWidth="70.0" />
    <TextField fx:id="idR33" editable="false" layoutX="537.0" layoutY="567.0" prefHeight="25.0" prefWidth="70.0" />
-   <ImageView fitHeight="44.0" fitWidth="57.0" layoutX="361.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true">
+   <ImageView fx:id="idCleanIc" fitHeight="44.0" fitWidth="57.0" layoutX="361.0" layoutY="351.0" onMouseClicked="#onCleanIcClicked" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@iconsAndImages/img.icons8.png" />
       </image>

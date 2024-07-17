@@ -12,7 +12,7 @@ import java.io.IOException;
 public class Home {
 
     @FXML
-    Button id2x2, id3x3, id4x4;
+    Button id2x2, id3x3, id4x4, idDeterminant,idRank, idInverse;
 
     public void on2x2Clicked() throws IOException {
         FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("2x2Matrix.fxml"));
@@ -30,6 +30,24 @@ public class Home {
         FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("4x4Matrix.fxml"));
         Parent root = fxmlLoader1.load();
         Stage stage1 = (Stage) id4x4.getScene().getWindow();
+        stage1.setScene(new Scene(root));
+    }
+    public void onDeterminantClicked() throws IOException {
+        FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("Determinant.fxml"));
+        Parent root = fxmlLoader1.load();
+        Stage stage1 = (Stage) idDeterminant.getScene().getWindow();
+        stage1.setScene(new Scene(root));
+    }
+    public void onRankClicked() throws IOException {
+        FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("Rank.fxml"));
+        Parent root = fxmlLoader1.load();
+        Stage stage1 = (Stage) idRank.getScene().getWindow();
+        stage1.setScene(new Scene(root));
+    }
+    public void onInverseClicked() throws IOException {
+        FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("Inverse.fxml"));
+        Parent root = fxmlLoader1.load();
+        Stage stage1 = (Stage) idInverse.getScene().getWindow();
         stage1.setScene(new Scene(root));
     }
 }

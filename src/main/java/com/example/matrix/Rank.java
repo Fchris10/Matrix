@@ -140,7 +140,7 @@ public class Rank {
         return rank;
     }
     public void onBackClicked() throws IOException {
-        FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("Matrix.fxml"));
+        FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("Home.fxml"));
         Parent root = fxmlLoader1.load();
         Stage stage1 = (Stage) idBack.getScene().getWindow();
         stage1.setScene(new Scene(root));
