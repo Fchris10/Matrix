@@ -6,7 +6,7 @@ public class SimpleOperators {
         double[][] sumMatrix = new double[size][size];
         for (int row = 0; row < size; row++) {
             for (int col = 0; col < size; col++) {
-                sumMatrix[row][col] = matrixA[row][col] + matrixB[row][col];
+                sumMatrix[row][col] = Math.round(matrixA[row][col] + matrixB[row][col]);
             }
         }
         return sumMatrix;
@@ -16,7 +16,7 @@ public class SimpleOperators {
         double[][] minusMatrix = new double[size][size];
         for (int row = 0; row < size; row++) {
             for (int col = 0; col < size; col++) {
-                minusMatrix[row][col] = matrixA[row][col] - matrixB[row][col];
+                minusMatrix[row][col] = Math.round(matrixA[row][col] - matrixB[row][col]);
             }
         }
         return minusMatrix;
@@ -27,7 +27,7 @@ public class SimpleOperators {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 for (int k = 0; k < size; k++) {
-                    multiMatrix[i][j] += matrixA[i][k] * matrixB[k][j];
+                    multiMatrix[i][j] += Math.round(matrixA[i][k] * matrixB[k][j]);
                 }
             }
         }
@@ -72,7 +72,7 @@ public class SimpleOperators {
                 for (int j = i + 1; j < size; j++) {
                     double ratio = result[j][i] / result[i][i];
                     for (int k = i; k < size; k++) {
-                        result[j][k] -= ratio * result[i][k];
+                        result[j][k] -= Math.round(ratio * result[i][k]);
                     }
                 }
             }
@@ -82,7 +82,7 @@ public class SimpleOperators {
                 for (int j = i - 1; j >= 0; j--) {
                     double ratio = result[j][i] / result[i][i];
                     for (int k = i; k >= 0; k--) {
-                        result[j][k] -= ratio * result[i][k];
+                        result[j][k] -= Math.round(ratio * result[i][k]);
                     }
                 }
             }

@@ -5,43 +5,62 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.matrix.Home">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.matrix.Home">
    <children>
-      <Button fx:id="idDeterminant" layoutX="20.0" layoutY="116.0" mnemonicParsing="false" onAction="#onDeterminantClicked" style="-fx-background-color: null;" text="DETERMINANTE" />
-      <Button fx:id="idInverse" layoutX="17.0" layoutY="163.0" mnemonicParsing="false" onAction="#onInverseClicked" style="-fx-background-color: null;" text="INVERSA" />
-      <Button fx:id="idRank" layoutX="20.0" layoutY="138.0" mnemonicParsing="false" onAction="#onRankClicked" style="-fx-background-color: null;" text="RANGO" />
-      <Label layoutX="65.0" layoutY="14.0" prefHeight="53.0" prefWidth="470.0" text="Welcome to the matrix solver">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="LIGHTBLUE" height="86.0" layoutX="68.0" layoutY="250.0" stroke="#2c3f67" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="INSIDE" width="469.0" />
+      <Button fx:id="idDeterminant" layoutX="231.0" layoutY="293.0" mnemonicParsing="false" onAction="#onDeterminantClicked" style="-fx-background-color: null;" text="DETERMINANT" underline="true">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="idInverse" layoutX="407.0" layoutY="293.0" mnemonicParsing="false" onAction="#onInverseClicked" style="-fx-background-color: null;" text="INVERSE" underline="true">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="idRank" layoutX="108.0" layoutY="293.0" mnemonicParsing="false" onAction="#onRankClicked" style="-fx-background-color: null;" text="RANK" underline="true">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Label layoutX="143.0" layoutY="13.0" prefHeight="53.0" prefWidth="317.0" text="MATRIX SOLVER">
          <font>
             <Font name="Times New Roman Bold" size="36.0" />
          </font>
       </Label>
-      <Label layoutX="247.0" layoutY="87.0" text="Select the dimension" />
-      <Button fx:id="id2x2" layoutX="275.0" layoutY="136.0" mnemonicParsing="false" onAction="#on2x2Clicked" text="2x2">
+      <Label layoutX="265.0" layoutY="256.0" text="Operations:">
          <font>
-            <Font name="System Bold Italic" size="18.0" />
+            <Font name="System Bold Italic" size="14.0" />
+         </font></Label>
+      <Button fx:id="id2x2" layoutX="112.0" layoutY="158.0" mnemonicParsing="false" onAction="#on2x2Clicked" style="-fx-background-color: lightblue; -fx-border-color: #2c3f67;" text="2x2" underline="true">
+         <font>
+            <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="id3x3" layoutX="275.0" layoutY="212.0" mnemonicParsing="false" onAction="#on3x3Clicked" text="3x3">
+      <Button fx:id="id3x3" layoutX="272.0" layoutY="158.0" mnemonicParsing="false" onAction="#on3x3Clicked" style="-fx-background-color: lightblue; -fx-border-color: #2c3f67;" text="3x3" underline="true">
          <font>
-            <Font name="System Bold Italic" size="18.0" />
+            <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="id4x4" layoutX="275.0" layoutY="287.0" mnemonicParsing="false" onAction="#on4x4Clicked" text="4x4">
+      <Button fx:id="id4x4" layoutX="420.0" layoutY="158.0" mnemonicParsing="false" onAction="#on4x4Clicked" style="-fx-background-color: lightblue; -fx-border-color: #2c3f67;" text="4x4" underline="true">
          <font>
-            <Font name="System Bold Italic" size="18.0" />
+            <Font size="18.0" />
          </font>
       </Button>
-      <ImageView fitHeight="39.0" fitWidth="45.0" layoutX="14.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="460.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@iconsAndImages/iconaMatrice.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="26.0" layoutX="358.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="110.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@iconsAndImages/636047.png" />
+            <Image url="@iconsAndImages/iconaMatrice.png" />
          </image>
       </ImageView>
+      <Label layoutX="238.0" layoutY="112.0" text="Select the dimension:">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

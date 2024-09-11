@@ -42,7 +42,7 @@ public class Inverse {
                     String text = txfList.get(i).getText();
                     matrix[row][col] = Double.parseDouble(text);
                 } catch (Exception e) {
-                    System.out.print("Error parsing number");
+                    showError("Error: there is almost a no-digit");
                 }
                 i++;
             }
@@ -80,7 +80,7 @@ public class Inverse {
     }
 
     public void onInverseClicked() {
-        double[][] inverse = calcolaInverse(matrix);
+        double[][] inverse = calculateInverse(matrix);
         if (inverse != null) {
             updateTextFields(inverse);
         } else {
@@ -88,7 +88,7 @@ public class Inverse {
         }
     }
 
-    public double[][] calcolaInverse(double[][] matrix) {
+    public double[][] calculateInverse(double[][] matrix) {
         int n = matrix.length;
         double[][] augmentedMatrix = new double[n][2 * n];
         initiateAugmentedMatrix(matrix, augmentedMatrix);
@@ -115,7 +115,7 @@ public class Inverse {
                 if (i != j) {
                     double factor = augmentedMatrix[j][i];
                     for (int k = 0; k < 2 * n; k++) {
-                        augmentedMatrix[j][k] -= factor * augmentedMatrix[i][k];
+                        augmentedMatrix[j][k] -= Math.round(factor * augmentedMatrix[i][k]);
                     }
                 }
             }

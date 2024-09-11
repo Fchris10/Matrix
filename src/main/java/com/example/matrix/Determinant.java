@@ -47,7 +47,7 @@ public class Determinant {
                     String text = txfList.get(i).getText();
                     matrix[row][col] = Double.parseDouble(text);
                 } catch (NumberFormatException e) {
-                    System.out.print("error");
+                    showError("Error: there is almost a no-digit");
                 }
                 i++;
             }
@@ -101,7 +101,7 @@ public class Determinant {
         double determinant = 0;
         for (int i = 0; i < n; i++) {
             double[][] subMatrix = getSubMatrix(matrix, 0, i);
-            determinant += Math.pow(-1, i) * matrix[0][i] * calculateDeterminant(subMatrix);
+            determinant += Math.round(Math.pow(-1, i) * matrix[0][i] * calculateDeterminant(subMatrix));
         }
         return determinant;
     }
@@ -131,5 +131,11 @@ public class Determinant {
         Parent root = fxmlLoader1.load();
         Stage stage1 = (Stage) idBack.getScene().getWindow();
         stage1.setScene(new Scene(root));
+    }
+    private void showError(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }

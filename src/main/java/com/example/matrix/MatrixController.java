@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -64,7 +65,7 @@ public class MatrixController {
                     String text = txfListA.get(i).getText();
                     matrixA[row][col] = Double.parseDouble(text);
                 } catch (NumberFormatException e) {
-                    System.out.print("error");
+                    showError("Error: there is almost a no-digit");
                 }
                 i++;
             }
@@ -78,7 +79,7 @@ public class MatrixController {
                     String text = txfListB.get(i).getText();
                     matrixB[row][col] = Double.parseDouble(text);
                 } catch (NumberFormatException e) {
-                    System.out.print("error");
+                    showError("Error: there is almost a no-digit");
                 }
                 i++;
             }
@@ -159,11 +160,16 @@ public class MatrixController {
             }
         }
     }
-
     public void onBackClicked() throws IOException {
         FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("Home.fxml"));
         Parent root = fxmlLoader1.load();
         Stage stage1 = (Stage) idBack.getScene().getWindow();
         stage1.setScene(new Scene(root));
+    }
+    private void showError(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }

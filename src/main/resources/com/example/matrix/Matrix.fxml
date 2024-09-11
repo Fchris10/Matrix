@@ -11,8 +11,9 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.matrix.MatrixController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.matrix.MatrixController">
     <GridPane gridLinesVisible="true" layoutX="172.0" layoutY="91.0" prefHeight="100.0" prefWidth="100.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" prefWidth="50.0" />
@@ -34,8 +35,14 @@
         <TextField fx:id="idA21" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
         <TextField fx:id="idA22" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
     </GridPane>
-    <Button fx:id="idCreateA" layoutX="220.0" layoutY="44.0" mnemonicParsing="false" onAction="#onCreateAClicked" text="CREATE" />
-   <Button fx:id="idSum" layoutX="362.0" layoutY="116.0" mnemonicParsing="false" onAction="#onSumClicked" text="A + B" />
+    <Button fx:id="idCreateA" layoutX="220.0" layoutY="44.0" mnemonicParsing="false" onAction="#onCreateAClicked" style="-fx-background-color: lightblue; -fx-border-color: black;" text="CREATE">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Button>
+   <Button fx:id="idSum" layoutX="362.0" layoutY="116.0" mnemonicParsing="false" onAction="#onSumClicked" style="-fx-background-color: lightblue; -fx-border-color: black;" text="A + B">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Button>
    <GridPane gridLinesVisible="true" layoutX="442.0" layoutY="91.0" prefHeight="100.0" prefWidth="100.0">
       <columnConstraints>
          <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" prefWidth="50.0" />
@@ -59,36 +66,72 @@
          <TextField fx:id="idB22" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="70.0" text="0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
       </children>
    </GridPane>
-   <Button fx:id="idMinus" layoutX="364.0" layoutY="151.0" mnemonicParsing="false" onAction="#onMinusClicked" text="A - B" />
-   <Button fx:id="idMultiplication" layoutX="363.0" layoutY="189.0" mnemonicParsing="false" onAction="#onMultiplicationClicked" text="A x B" />
-   <TextField fx:id="idValPowA" alignment="CENTER" editable="false" layoutX="285.0" layoutY="301.0" prefHeight="25.0" prefWidth="35.0" text="2" />
-   <Button fx:id="idPowA" layoutX="171.0" layoutY="301.0" mnemonicParsing="false" onAction="#onPowAClicked" prefHeight="25.0" prefWidth="115.0" text="POW" />
-   <Button fx:id="idTransposedA" layoutX="171.0" layoutY="276.0" mnemonicParsing="false" onAction="#onTransposedAClicked" prefHeight="25.0" prefWidth="150.0" text="TRASPOSTA" />
-   <Button fx:id="idCreateB" layoutX="490.0" layoutY="44.0" mnemonicParsing="false" onAction="#onCreateBClicked" text="CREATE" />
-   <Button fx:id="idMultiplicationANum" layoutX="171.0" layoutY="326.0" mnemonicParsing="false" onAction="#onMultiplicationANumClicked" prefHeight="25.0" prefWidth="115.0" text="Moltiplicare per" />
-   <TextField fx:id="idValA" alignment="CENTER" layoutX="285.0" layoutY="326.0" prefHeight="25.0" prefWidth="35.0" text="2" />
+   <Button fx:id="idMinus" layoutX="364.0" layoutY="151.0" mnemonicParsing="false" onAction="#onMinusClicked" style="-fx-background-color: lightblue; -fx-border-color: black;" text="A - B">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Button>
+   <Button fx:id="idMultiplication" layoutX="363.0" layoutY="189.0" mnemonicParsing="false" onAction="#onMultiplicationClicked" style="-fx-background-color: lightblue; -fx-border-color: black;" text="A x B">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Button>
+   <TextField fx:id="idValPowA" alignment="CENTER" editable="false" layoutX="286.0" layoutY="303.0" prefHeight="25.0" prefWidth="35.0" style="-fx-border-color: black;" text="2" />
+   <Button fx:id="idPowA" layoutX="171.0" layoutY="303.0" mnemonicParsing="false" onAction="#onPowAClicked" prefHeight="25.0" prefWidth="115.0" style="-fx-background-color: lightblue; -fx-border-color: black;" text="POW">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Button>
+   <Button fx:id="idTransposedA" layoutX="171.0" layoutY="276.0" mnemonicParsing="false" onAction="#onTransposedAClicked" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: lightblue; -fx-border-color: black;" text="TRASPOSED">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Button>
+   <Button fx:id="idCreateB" layoutX="490.0" layoutY="44.0" mnemonicParsing="false" onAction="#onCreateBClicked" style="-fx-background-color: lightblue; -fx-border-color: black;" text="CREATE">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Button>
+   <Button fx:id="idMultiplicationANum" layoutX="171.0" layoutY="330.0" mnemonicParsing="false" onAction="#onMultiplicationANumClicked" prefHeight="25.0" prefWidth="115.0" style="-fx-background-color: lightblue; -fx-border-color: black;" text="BY">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Button>
+   <TextField fx:id="idValA" alignment="CENTER" layoutX="286.0" layoutY="330.0" prefHeight="25.0" prefWidth="35.0" style="-fx-border-color: black;" text="2" />
    <Line endX="585.0" layoutX="115.0" layoutY="423.0" startX="-115.00000762939453" />
-   <TextField fx:id="idR00" editable="false" layoutX="255.0" layoutY="448.0" prefHeight="25.0" prefWidth="70.0" />
-   <TextField fx:id="idR01" editable="false" layoutX="349.0" layoutY="448.0" prefHeight="25.0" prefWidth="70.0" />
-   <TextField fx:id="idR02" editable="false" layoutX="447.0" layoutY="448.0" prefHeight="25.0" prefWidth="70.0" />
-   <TextField fx:id="idR10" editable="false" layoutX="255.0" layoutY="489.0" prefHeight="25.0" prefWidth="70.0" />
-   <TextField fx:id="idR11" editable="false" layoutX="349.0" layoutY="489.0" prefHeight="25.0" prefWidth="70.0" />
-   <TextField fx:id="idR12" editable="false" layoutX="447.0" layoutY="489.0" prefHeight="25.0" prefWidth="70.0" />
-   <TextField fx:id="idR20" editable="false" layoutX="255.0" layoutY="531.0" prefHeight="25.0" prefWidth="70.0" />
-   <TextField fx:id="idR21" editable="false" layoutX="349.0" layoutY="531.0" prefHeight="25.0" prefWidth="70.0" />
-   <TextField fx:id="idR22" editable="false" layoutX="447.0" layoutY="531.0" prefHeight="25.0" prefWidth="70.0" />
-   <TextField fx:id="idValPowB" alignment="CENTER" editable="false" layoutX="555.0" layoutY="301.0" prefHeight="25.0" prefWidth="35.0" text="2" />
-   <Button fx:id="idPowB" layoutX="441.0" layoutY="301.0" mnemonicParsing="false" onAction="#onPowBClicked" prefHeight="25.0" prefWidth="115.0" text="POW" />
-   <Button fx:id="idTransposedB" layoutX="441.0" layoutY="276.0" mnemonicParsing="false" onAction="#onTransposedBClicked" prefHeight="25.0" prefWidth="150.0" text="TRASPOSTA" />
-   <Button fx:id="idMultiplicationBNum" layoutX="441.0" layoutY="326.0" mnemonicParsing="false" onAction="#onMultiplicationBNumClicked" prefHeight="25.0" prefWidth="115.0" text="Moltiplicare per" />
-   <TextField fx:id="idValB" alignment="CENTER" layoutX="555.0" layoutY="326.0" prefHeight="25.0" prefWidth="35.0" text="2" />
-   <Button fx:id="idTriangularA" layoutX="171.0" layoutY="250.0" mnemonicParsing="false" onAction="#onTriangularAClicked" prefHeight="26.0" prefWidth="150.0" text="TRIANGOLARE" />
-   <Button fx:id="idTriangularB" layoutX="441.0" layoutY="250.0" mnemonicParsing="false" onAction="#onTriangularBClicked" prefHeight="26.0" prefWidth="150.0" text="TRIANGOLARE" />
+   <TextField fx:id="idR00" editable="false" layoutX="254.0" layoutY="446.0" prefHeight="25.0" prefWidth="70.0" style="-fx-border-color: black;" />
+   <TextField fx:id="idR01" editable="false" layoutX="348.0" layoutY="446.0" prefHeight="25.0" prefWidth="70.0" style="-fx-border-color: black;" />
+   <TextField fx:id="idR02" editable="false" layoutX="446.0" layoutY="446.0" prefHeight="25.0" prefWidth="70.0" style="-fx-border-color: black;" />
+   <TextField fx:id="idR10" editable="false" layoutX="254.0" layoutY="487.0" prefHeight="25.0" prefWidth="70.0" style="-fx-border-color: black;" />
+   <TextField fx:id="idR11" editable="false" layoutX="348.0" layoutY="487.0" prefHeight="25.0" prefWidth="70.0" style="-fx-border-color: black;" />
+   <TextField fx:id="idR12" editable="false" layoutX="446.0" layoutY="487.0" prefHeight="25.0" prefWidth="70.0" style="-fx-border-color: black;" />
+   <TextField fx:id="idR20" editable="false" layoutX="254.0" layoutY="529.0" prefHeight="25.0" prefWidth="70.0" style="-fx-border-color: black;" />
+   <TextField fx:id="idR21" editable="false" layoutX="348.0" layoutY="529.0" prefHeight="25.0" prefWidth="70.0" style="-fx-border-color: black;" />
+   <TextField fx:id="idR22" editable="false" layoutX="446.0" layoutY="529.0" prefHeight="25.0" prefWidth="70.0" style="-fx-border-color: black;" />
+   <TextField fx:id="idValPowB" alignment="CENTER" editable="false" layoutX="556.0" layoutY="303.0" prefHeight="25.0" prefWidth="35.0" style="-fx-border-color: black;" text="2" />
+   <Button fx:id="idPowB" layoutX="441.0" layoutY="303.0" mnemonicParsing="false" onAction="#onPowBClicked" prefHeight="25.0" prefWidth="115.0" style="-fx-background-color: lightblue; -fx-border-color: black;" text="POW">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Button>
+   <Button fx:id="idTransposedB" layoutX="441.0" layoutY="276.0" mnemonicParsing="false" onAction="#onTransposedBClicked" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: lightblue; -fx-border-color: black;" text="TRASPOSED">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Button>
+   <Button fx:id="idMultiplicationBNum" layoutX="441.0" layoutY="330.0" mnemonicParsing="false" onAction="#onMultiplicationBNumClicked" prefHeight="25.0" prefWidth="115.0" style="-fx-background-color: lightblue; -fx-border-color: black;" text="BY">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Button>
+   <TextField fx:id="idValB" alignment="CENTER" layoutX="556.0" layoutY="330.0" prefHeight="25.0" prefWidth="35.0" style="-fx-border-color: black;" text="2" />
+   <Button fx:id="idTriangularA" layoutX="171.0" layoutY="250.0" mnemonicParsing="false" onAction="#onTriangularAClicked" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: lightblue; -fx-border-color: black;" text="TRIANGULAR">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Button>
+   <Button fx:id="idTriangularB" layoutX="441.0" layoutY="250.0" mnemonicParsing="false" onAction="#onTriangularBClicked" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: lightblue; -fx-border-color: black;" text="TRIANGULAR">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Button>
    <CheckBox fx:id="idUpperA" layoutX="334.0" layoutY="250.0" mnemonicParsing="false" onAction="#onUpperAClicked" prefHeight="26.0" prefWidth="61.0" text="Upper" />
    <CheckBox fx:id="idUpperB" layoutX="602.0" layoutY="250.0" mnemonicParsing="false" onAction="#onUpperBClicked" prefHeight="26.0" prefWidth="61.0" text="Upper" />
-   <Button fx:id="idBack" layoutX="14.0" layoutY="561.0" mnemonicParsing="false" onAction="#onBackClicked" text="BACK" />
+   <Button fx:id="idBack" layoutX="14.0" layoutY="561.0" mnemonicParsing="false" onAction="#onBackClicked" style="-fx-background-color: null; -fx-border-color: lightblue;" text="BACK">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Button>
    <Label fx:id="idLabel" layoutX="80.0" layoutY="493.0" />
-   <ImageView fx:id="idCleanIc" fitHeight="44.0" fitWidth="57.0" layoutX="363.0" layoutY="351.0" onMouseClicked="#onCleanIcClicked" pickOnBounds="true" preserveRatio="true">
+   <ImageView fx:id="idCleanIc" fitHeight="37.0" fitWidth="35.0" layoutX="372.0" layoutY="351.0" onMouseClicked="#onCleanIcClicked" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@iconsAndImages/img.icons8.png" />
       </image>
